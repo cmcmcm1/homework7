@@ -1,0 +1,27 @@
+using System;
+public interface IItem
+{
+    void SetPrice(double price);
+}
+public interface ItemDiscount : IItem
+{
+    void ApplyDiscount(String discount);
+    void ApplyPromocode(String promocode);
+}
+public interface ItemCharacteristics
+{
+    void SetColor(byte color);
+    void SetSize(byte size);
+}
+class Book : IItem, ItemDiscount
+{
+    public void SetPrice(double price) { }
+    public void ApplyDiscount(String discount) { }
+    public void ApplyPromocode(String promocode) { }
+}
+class Cloth : IItem, ItemCharacteristics
+{
+    public void SetPrice(double price) { }
+    public void SetColor(byte color) { }
+    public void SetSize(byte size) { }
+}
